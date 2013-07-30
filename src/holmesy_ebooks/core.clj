@@ -1,11 +1,5 @@
 (ns holmesy-ebooks.core
-    (:use
-   [twitter.oauth]
-   [twitter.callbacks]
-   [twitter.callbacks.handlers]
-   [twitter.api.restful])
-  (:import
-   (twitter.callbacks.protocols SyncSingleCallback)))
+  (:require [twitter.api.restful :refer [statuses-update]]))
 
 ;; (def my-creds (make-oauth-creds
 ;;                *app-consumer-key*
@@ -27,11 +21,11 @@
         num (count sentences)]
     (fn [] (nth sentences (rand-int num) ))))
 
-(defn main-twitter [& [tweet]]
+(defn main-twitter [& [tweet?]]
   (let [fn (random-sentence (slurp "resources/sherlock-holmes.txt"))]
     (while true
       (let [text (fn)]
-        (when tweet) (tweet text)
+        (when tweet? (tweet text))
         (println text))
       (Thread/sleep 1000))))
 
