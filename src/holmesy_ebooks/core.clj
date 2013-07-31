@@ -1,6 +1,10 @@
 (ns holmesy-ebooks.core
   (:require [twitter.api.restful :refer [statuses-update]]))
 
+
+;; You need to create a twitter read/write twitter account and fill
+;; these in:
+
 ;; (def my-creds (make-oauth-creds
 ;;                *app-consumer-key*
 ;;                *app-consumer-secret*
