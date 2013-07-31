@@ -1,4 +1,4 @@
-# horsey_ebooks
+# holmesy_ebooks
 
 A Clojure library designed to impersonate @Horse_ebooks
 
